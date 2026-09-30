@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Anirudh Ravichander | TUNEVEN</title>
+
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        :root {
+
+            --black: #050505;
+            --deep-black: #080808;
+            --card: #111111;
+
+            --white: #ffffff;
+            --light: #e8e8e8;
+            --muted: #9d9d9d;
+
+            --border: rgba(255,255,255,0.10);
+
+            --accent: #ffffff;
+
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 80% 10%,
+                    rgba(255,255,255,0.07),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 10% 50%,
+                    rgba(255,255,255,0.035),
+                    transparent 35%
+                ),
+
+                var(--black);
+
+            color: var(--white);
+
+            min-height: 100vh;
+
+            padding-bottom: 130px;
+
+        }
+
+
+        button {
+            font-family: inherit;
+        }
+
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+
+            background:
+                rgba(5,5,5,0.86);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            border-bottom:
+                1px solid var(--border);
+
+        }
+
+
+        .navbar {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            min-height: 75px;
+
+            padding:
+                0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+        }
+
+
+        /* =========================================
+           TUNEVEN LOGO
+           PURE MONOCHROME
+        ========================================= */
+
+        .logo {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 24px;
+
+            font-weight: 900;
+
+            letter-spacing: 4px;
+
+        }
+
+
+        .back {
+
+            color: var(--muted);
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.25s;
+
+        }
+
+
+        .back:hover {
+
+            color: #ffffff;
+
+        }
+
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        main {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding:
+                0 25px;
+
+        }
+
+
+
+        /* =========================================
+           ARTIST HERO
+        ========================================= */
+
+        .artist-hero {
+
+            min-height: 520px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 70px;
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .artist-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 450px;
+
+            height: 450px;
+
+            left: -180px;
+
+            top: 70px;
+
+            background: #ffffff;
+
+            opacity: 0.035;
+
+            filter: blur(110px);
+
+            border-radius: 50%;
+
+        }
+
+
+
+        /* =========================================
+           ARTIST MONOCHROME ART
+        ========================================= */
+
+        .artist-art {
+
+            width: 300px;
+
+            height: 300px;
+
+            flex-shrink: 0;
+
+            border-radius: 35px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    #171717,
+                    #050505
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow:
+
+                0 30px 80px
+                rgba(0,0,0,0.65),
+
+                inset 0 0 80px
+                rgba(255,255,255,0.025);
+
+        }
+
+
+        .artist-art span {
+
+            font-size: 100px;
+
+            font-weight: 900;
+
+            color: #ffffff;
+
+            letter-spacing: -8px;
+
+        }
+
+
+
+        /* =========================================
+           ARTIST INFORMATION
+        ========================================= */
+
+        .artist-details {
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .artist-label {
+
+            color: #ffffff;
+
+            font-size: 12px;
+
+            letter-spacing: 5px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .artist-details h1 {
+
+            font-size:
+                clamp(
+                    45px,
+                    7vw,
+                    80px
+                );
+
+            line-height: 0.95;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .artist-role {
+
+            font-size: 15px;
+
+            color: #ffffff;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .artist-details p {
+
+            color: var(--muted);
+
+            max-width: 650px;
+
+            line-height: 1.7;
+
+        }
+
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .artist-buttons {
+
+            margin-top: 30px;
+
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .primary {
+
+            border: none;
+
+            padding:
+                13px 23px;
+
+            border-radius: 30px;
+
+            background: #ffffff;
+
+            color: #000000;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+            font-weight: bold;
+
+        }
+
+
+        .primary:hover {
+
+            transform:
+                translateY(-2px);
+
+            background: #dddddd;
+
+        }
+
+
+        .secondary {
+
+            padding:
+                13px 23px;
+
+            border-radius: 30px;
+
+            background: transparent;
+
+            color: #ffffff;
+
+            border:
+                1px solid
+                var(--border);
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+        }
+
+
+        .secondary:hover {
+
+            border-color:
+                rgba(255,255,255,0.45);
+
+        }
+
+
+
+        /* =========================================
+           SECTIONS
+        ========================================= */
+
+        section {
+
+            margin-top: 80px;
+
+        }
+
+
+        .heading {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .heading h2 {
+
+            font-size: 32px;
+
+        }
+
+
+        .heading p {
+
+            color: var(--muted);
+
+            margin-top: 8px;
+
+        }
+
+
+
+        /* =========================================
+           SONG LIST
+        ========================================= */
+
+        .song-list {
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            background:
+                rgba(17,17,17,0.75);
+
+        }
+
+
+        .song {
+
+            min-height: 78px;
+
+            padding:
+                12px 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            border-bottom:
+                1px solid
+                var(--border);
+
+            transition: 0.2s;
+
+        }
+
+
+        .song:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .song:hover {
+
+            background:
+                rgba(255,255,255,0.035);
+
+        }
+
+
+        .song-number {
+
+            width: 30px;
+
+            color: var(--muted);
+
+            text-align: center;
+
+            font-size: 13px;
+
+        }
+
+
+        .song-cover {
+
+            width: 48px;
+
+            height: 48px;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #303030,
+                    #080808
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-weight: bold;
+
+            color: white;
+
+        }
+
+
+        .song-info {
+
+            flex: 1;
+
+            min-width: 0;
+
+        }
+
+
+        .song-title {
+
+            font-weight: bold;
+
+        }
+
+
+        .song-meta {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 5px;
+
+        }
+
+
+        /*
+           The button is intentionally
+           disabled until an audio file
+           is added.
+        */
+
+        .play {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                var(--border);
+
+            background:
+                rgba(255,255,255,0.03);
+
+            color: #ffffff;
+
+            cursor: default;
+
+            opacity: 0.45;
+
+        }
+
+
+
+        /* =========================================
+           ALBUM / PROJECT SECTION
+        ========================================= */
+
+        .album-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .album {
+
+            background:
+                var(--card);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 18px;
+
+            padding: 15px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .album:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(255,255,255,0.25);
+
+        }
+
+
+        .album-cover {
+
+            aspect-ratio: 1;
+
+            border-radius: 13px;
+
+            background:
+
+                radial-gradient(
+                    circle at 30% 20%,
+                    rgba(255,255,255,0.14),
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    145deg,
+                    #282828,
+                    #070707
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 35px;
+
+            font-weight: 900;
+
+        }
+
+
+        .album h3 {
+
+            margin-top: 15px;
+
+            font-size: 16px;
+
+        }
+
+
+        .album p {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 5px;
+
+        }
+
+
+
+        /* =========================================
+           MOODS
+        ========================================= */
+
+        .moods {
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+        }
+
+
+        .mood {
+
+            padding:
+                10px 18px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                var(--border);
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+
+        /* =========================================
+           MUSIC PLAYER
+        ========================================= */
+
+        #player {
+
+            position: fixed;
+
+            left: 20px;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 500;
+
+            display: none;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding:
+                15px 20px;
+
+            background:
+                rgba(12,12,12,0.96);
+
+            backdrop-filter:
+                blur(20px);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 20px 80px
+                rgba(0,0,0,0.55);
+
+        }
+
+
+        #player.active {
+
+            display: flex;
+
+        }
+
+
+        .now-playing {
+
+            width: 220px;
+
+            min-width: 0;
+
+        }
+
+
+        .now-playing-title {
+
+            font-weight: bold;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+        }
+
+
+        .now-playing-artist {
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            margin-top: 4px;
+
+        }
+
+
+        .controls {
+
+            display: flex;
+
+            gap: 8px;
+
+        }
+
+
+        .controls button {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid
+                var(--border);
+
+            color: white;
+
+            cursor: pointer;
+
+        }
+
+
+        .controls button:hover {
+
+            background: #ffffff;
+
+            color: #000000;
+
+        }
+
+
+        .progress {
+
+            flex: 1;
+
+        }
+
+
+        #progress {
+
+            width: 100%;
+
+            accent-color: #ffffff;
+
+        }
+
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            max-width: 1250px;
+
+            margin:
+                100px auto 0;
+
+            padding:
+                40px 25px;
+
+            border-top:
+                1px solid
+                var(--border);
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+        }
+
+
+        footer strong {
+
+            color: #ffffff;
+
+            letter-spacing: 4px;
+
+        }
+
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width: 850px) {
+
+            .artist-hero {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 40px;
+
+                padding-top: 60px;
+
+            }
+
+
+            .artist-art {
+
+                width: 230px;
+
+                height: 230px;
+
+            }
+
+
+            .artist-art span {
+
+                font-size: 75px;
+
+            }
+
+
+            .album-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+
+            #player {
+
+                flex-wrap: wrap;
+
+            }
+
+
+            .now-playing {
+
+                width: 100%;
+
+            }
+
+
+            .progress {
+
+                flex-basis: 100%;
+
+            }
+
+        }
+
+
+
+        @media(max-width: 500px) {
+
+            main {
+
+                padding:
+                    0 15px;
+
+            }
+
+
+            .navbar {
+
+                padding:
+                    0 15px;
+
+            }
+
+
+            .back {
+
+                display: none;
+
+            }
+
+
+            .artist-details h1 {
+
+                font-size: 48px;
+
+            }
+
+
+            .album-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 10px;
+
+            }
+
+
+            .song {
+
+                padding:
+                    10px;
+
+            }
+
+
+            .song-number {
+
+                display: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a
+                class="logo"
+                href="../index.html"
+            >
+                TUNEVEN
+            </a>
+
+
+            <a
+                class="back"
+                href="../index.html"
+            >
+                ← Back to TUNEVEN
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- =========================================
+             ARTIST HERO
+        ========================================== -->
+
+        <div class="artist-hero">
+
+
+            <div class="artist-art">
+
+                <span>
+                    AR
+                </span>
+
+            </div>
+
+
+
+            <div class="artist-details">
+
+
+                <div class="artist-label">
+                    ARTIST
+                </div>
+
+
+                <h1>
+                    Anirudh<br>
+                    Ravichander
+                </h1>
+
+
+                <div class="artist-role">
+                    SINGER &nbsp; • &nbsp; COMPOSER
+                </div>
+
+
+                <p>
+                    Explore the music and projects of
+                    Anirudh Ravichander on TUNEVEN.
+                    Discover songs through a dedicated
+                    artist-focused listening experience.
+                </p>
+
+
+                <div class="artist-buttons">
+
+
+                    <button
+                        class="primary"
+                        onclick="playFirstSong()"
+                    >
+                        Play
+                    </button>
+
+
+                    <button
+                        class="secondary"
+                        onclick="
+                            document
+                            .getElementById('songs')
+                            .scrollIntoView()
+                        "
+                    >
+                        View Songs
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             SONGS
+        ========================================== -->
+
+        <section id="songs">
+
+
+            <div class="heading">
+
+                <h2>
+                    Songs
+                </h2>
+
+
+                <p>
+                    Songs will be added to TUNEVEN here.
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="song-list"
+                id="songList"
+            >
+
+
+                <!-- SONG 01 -->
+
+                <div
+                    class="song"
+                    data-title="Song 01"
+                    data-src=""
+                >
+
+
+                    <div class="song-number">
+                        01
+                    </div>
+
+
+                    <div class="song-cover">
+                        AR
+                    </div>
+
+
+                    <div class="song-info">
+
+                        <div class="song-title">
+                            Song 01
+                        </div>
+
+
+                        <div class="song-meta">
+                            Anirudh Ravichander
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="play"
+                        disabled
+                        aria-label="Audio not added"
+                    >
+                        Play
+                    </button>
+
+                </div>
+
+
+
+                <!-- SONG 02 -->
+
+                <div
+                    class="song"
+                    data-title="Song 02"
+                    data-src=""
+                >
+
+
+                    <div class="song-number">
+                        02
+                    </div>
+
+
+                    <div class="song-cover">
+                        AR
+                    </div>
+
+
+                    <div class="song-info">
+
+                        <div class="song-title">
+                            Song 02
+                        </div>
+
+
+                        <div class="song-meta">
+                            Anirudh Ravichander
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="play"
+                        disabled
+                        aria-label="Audio not added"
+                    >
+                        Play
+                    </button>
+
+                </div>
+
+
+
+                <!-- SONG 03 -->
+
+                <div
+                    class="song"
+                    data-title="Song 03"
+                    data-src=""
+                >
+
+
+                    <div class="song-number">
+                        03
+                    </div>
+
+
+                    <div class="song-cover">
+                        AR
+                    </div>
+
+
+                    <div class="song-info">
+
+                        <div class="song-title">
+                            Song 03
+                        </div>
+
+
+                        <div class="song-meta">
+                            Anirudh Ravichander
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="play"
+                        disabled
+                        aria-label="Audio not added"
+                    >
+                        Play
+                    </button>
+
+                </div>
+
+
+
+                <!--
+                    MORE SONGS WILL BE ADDED
+                    AFTER YOU PROVIDE THE
+                    AUTHORIZED AUDIO FILES.
+                -->
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             ALBUMS / PROJECTS
+        ========================================== -->
+
+        <section>
+
+
+            <div class="heading">
+
+                <h2>
+                    Albums & Projects
+                </h2>
+
+
+                <p>
+                    Projects and releases will be
+                    organized here.
+                </p>
+
+            </div>
+
+
+
+            <div class="album-grid">
+
+
+                <div class="album">
+
+                    <div class="album-cover">
+                        01
+                    </div>
+
+                    <h3>
+                        Project 01
+                    </h3>
+
+                    <p>
+                        Songs will be added later
+                    </p>
+
+                </div>
+
+
+
+                <div class="album">
+
+                    <div class="album-cover">
+                        02
+                    </div>
+
+                    <h3>
+                        Project 02
+                    </h3>
+
+                    <p>
+                        Songs will be added later
+                    </p>
+
+                </div>
+
+
+
+                <div class="album">
+
+                    <div class="album-cover">
+                        03
+                    </div>
+
+                    <h3>
+                        Project 03
+                    </h3>
+
+                    <p>
+                        Songs will be added later
+                    </p>
+
+                </div>
+
+
+
+                <div class="album">
+
+                    <div class="album-cover">
+                        04
+                    </div>
+
+                    <h3>
+                        Project 04
+                    </h3>
+
+                    <p>
+                        Songs will be added later
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             MOODS
+        ========================================== -->
+
+        <section>
+
+
+            <div class="heading">
+
+                <h2>
+                    Anirudh Moods
+                </h2>
+
+
+                <p>
+                    Explore music according to your mood.
+                </p>
+
+            </div>
+
+
+
+            <div class="moods">
+
+                <div class="mood">
+                    Energy
+                </div>
+
+                <div class="mood">
+                    Motivation
+                </div>
+
+                <div class="mood">
+                    Love
+                </div>
+
+                <div class="mood">
+                    Party
+                </div>
+
+                <div class="mood">
+                    Travel
+                </div>
+
+                <div class="mood">
+                    Calm
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         PLAYER
+    ========================================== -->
+
+    <div id="player">
+
+
+        <div class="now-playing">
+
+
+            <div
+                class="now-playing-title"
+                id="playerTitle"
+            >
+                No song selected
+            </div>
+
+
+            <div class="now-playing-artist">
+                Anirudh Ravichander
+            </div>
+
+
+        </div>
+
+
+
+        <div class="controls">
+
+
+            <button
+                onclick="previousSong()"
+            >
+                Previous
+            </button>
+
+
+            <button
+                onclick="togglePlay()"
+            >
+                <span id="playIcon">
+                    Play
+                </span>
+            </button>
+
+
+            <button
+                onclick="nextSong()"
+            >
+                Next
+            </button>
+
+
+        </div>
+
+
+
+        <div class="progress">
+
+            <input
+                id="progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                oninput="seekSong()"
+            >
+
+        </div>
+
+
+    </div>
+
+
+
+    <audio id="audio"></audio>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <strong>
+            TUNEVEN
+        </strong>
+
+        <br><br>
+
+        Music • Mood • Moment
+
+        <br><br>
+
+        © 2026 TUNEVEN
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        /* =========================================
+           AUDIO SYSTEM
+        ========================================== */
+
+
+        const audio =
+            document.getElementById("audio");
+
+
+        const player =
+            document.getElementById("player");
+
+
+        const playerTitle =
+            document.getElementById("playerTitle");
+
+
+        const playIcon =
+            document.getElementById("playIcon");
+
+
+        const songElements =
+            Array.from(
+                document.querySelectorAll(".song")
+            );
+
+
+        let currentIndex = -1;
+
+
+
+        /* =========================================
+           FIND AVAILABLE SONG
+        ========================================== */
+
+        function getAvailableSongs() {
+
+            return songElements.filter(
+                song =>
+                    song.dataset.src &&
+                    song.dataset.src.trim() !== ""
+            );
+
+        }
+
+
+
+        /* =========================================
+           PLAY SONG
+        ========================================== */
+
+        function playSong(song) {
+
+
+            const source =
+                song.dataset.src;
+
+
+            if (!source) {
+
+                return;
+
+            }
+
+
+            currentIndex =
+                songElements.indexOf(song);
+
+
+            audio.src =
+                source;
+
+
+            playerTitle.textContent =
+                song.dataset.title;
+
+
+            player.classList.add(
+                "active"
+            );
+
+
+            audio.play();
+
+
+            playIcon.textContent =
+                "Pause";
+
+        }
+
+
+
+        /* =========================================
+           FIRST SONG
+        ========================================== */
+
+        function playFirstSong() {
+
+
+            const available =
+                getAvailableSongs();
+
+
+            if (
+                available.length === 0
+            ) {
+
+                alert(
+                    "No audio has been added yet. Songs will be connected after you upload the authorized audio files."
+                );
+
+                return;
+
+            }
+
+
+            playSong(
+                available[0]
+            );
+
+        }
+
+
+
+        /* =========================================
+           PLAY / PAUSE
+        ========================================== */
+
+        function togglePlay() {
+
+
+            if (
+                currentIndex === -1
+            ) {
+
+                playFirstSong();
+
+                return;
+
+            }
+
+
+            if (
+                audio.paused
+            ) {
+
+                audio.play();
+
+                playIcon.textContent =
+                    "Pause";
+
+            }
+
+            else {
+
+                audio.pause();
+
+                playIcon.textContent =
+                    "Play";
+
+            }
+
+        }
+
+
+
+        /* =========================================
+           NEXT SONG
+        ========================================== */
+
+        function nextSong() {
+
+
+            const available =
+                getAvailableSongs();
+
+
+            if (
+                available.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+            let position =
+                available.findIndex(
+                    song =>
+                        songElements.indexOf(song)
+                        === currentIndex
+                );
+
+
+            position++;
+
+
+            if (
+                position >=
+                available.length
+            ) {
+
+                position = 0;
+
+            }
+
+
+            playSong(
+                available[position]
+            );
+
+        }
+
+
+
+        /* =========================================
+           PREVIOUS SONG
+        ========================================== */
+
+        function previousSong() {
+
+
+            const available =
+                getAvailableSongs();
+
+
+            if (
+                available.length === 0
+            ) {
+
+                return;
+
+            }
+
+
+            let position =
+                available.findIndex(
+                    song =>
+                        songElements.indexOf(song)
+                        === currentIndex
+                );
+
+
+            position--;
+
+
+            if (
+                position < 0
+            ) {
+
+                position =
+                    available.length - 1;
+
+            }
+
+
+            playSong(
+                available[position]
+            );
+
+        }
+
+
+
+        /* =========================================
+           AUTOMATIC NEXT SONG
+        ========================================== */
+
+        audio.addEventListener(
+            "ended",
+            nextSong
+        );
+
+
+
+        /* =========================================
+           PROGRESS
+        ========================================== */
+
+        audio.addEventListener(
+            "timeupdate",
+            () => {
+
+
+                if (
+                    !audio.duration
+                ) {
+
+                    return;
+
+                }
+
+
+                document
+                    .getElementById(
+                        "progress"
+                    )
+                    .value =
+                    (
+                        audio.currentTime /
+                        audio.duration
+                    ) * 100;
+
+            }
+        );
+
+
+
+        /* =========================================
+           SEEK
+        ========================================== */
+
+        function seekSong() {
+
+
+            if (
+                !audio.duration
+            ) {
+
+                return;
+
+            }
+
+
+            const value =
+                document
+                    .getElementById(
+                        "progress"
+                    )
+                    .value;
+
+
+            audio.currentTime =
+                (value / 100) *
+                audio.duration;
+
+        }
+
+
+
+        /* =========================================
+           PLAYER STATE
+        ========================================== */
+
+        audio.addEventListener(
+            "pause",
+            () => {
+
+                playIcon.textContent =
+                    "Play";
+
+            }
+        );
+
+
+        audio.addEventListener(
+            "play",
+            () => {
+
+                playIcon.textContent =
+                    "Pause";
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
